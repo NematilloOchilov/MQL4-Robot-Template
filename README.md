@@ -44,3 +44,17 @@ Loyiha quyidagi bloklarga ajratilgan:
 
 ## 🔒 Litsenziya
 
+---
+
+## 📬 Bog‘lanish
+
+Agar siz `MyExpert` robotining to‘liq funksional `.ex4` versiyasiga ega bo‘lishni istasangiz yoki alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
+
+📈 **Telegram:** [@yourtelegram](https://t.me/Nematillo_Ochilov) *(o‘rnini to‘ldiring)*  
+🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
+
+---
+
+> 💡 Ushbu loyiha algoritmik savdo sohasida professional, barqaror, nazoratli va xavfsiz bitimlarni amalga oshirish uchun yaratilmoqda.
+****
+
