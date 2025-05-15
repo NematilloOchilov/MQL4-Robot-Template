@@ -33,8 +33,7 @@ Loyiha quyidagi bloklarga ajratilgan:
 1. Narx haftalik maksimumni yuqoriga yorib o‘tsa
 2. Fibonacci 0% dan 100% ga (kunlik max → min) tortiladi
 3. Narx 23.6% darajaga qaytadi (retest)
-4. RSI(14) = 30 ga tegsa:
-    - 2 ta bir xil hajmli *buy* ochiladi
+4. RSI(14) = 30 ga tegsa 2 ta bir xil hajmli *buy* ochiladi yoki RSI(14) = 70 ga tegsa 2 ta bir xil hajmli *sell* ochiladi
     - 1-chi TP = Fib 50%
     - 2-chi TP = Fib 76%
     - SL = Fib -11%
