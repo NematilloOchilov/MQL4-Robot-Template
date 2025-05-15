@@ -56,10 +56,10 @@ Loyiha quyidagi bloklarga ajratilgan:
 ---
 
 ## 📬 Bog‘lanish
-**ZON robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
-Agar siz alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
-📈 **Telegram:** [@Nematillo_Ochilov](https://t.me/Nematillo_Ochilov)
-🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
+- **ZON robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
+- Agar siz alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
+- 📈 **Telegram:** [@Nematillo_Ochilov](https://t.me/Nematillo_Ochilov)
+- 🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
 
 ---
 
