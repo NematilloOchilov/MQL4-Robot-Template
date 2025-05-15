@@ -1,6 +1,8 @@
-# MyExpert — MQL4 Algorithmic Trading Robot
+# Momentum_pullback — MQL4 Algorithmic Trading Robot
 
-**Muallif:** Ne'matillo Ochilov  
+**Muallif:** Ne'matillo Ochilov
+Strategist, MQL4 developer va algoritmik savdo bo‘yicha mustaqil tadqiqotchi.
+**Dasturchi:** Ne'matillo Ochilov
 **Loyiha turi:** Shaxsiy (barcha huquqlar himoyalangan)
 **Status:** Faol ishlab chiqilmoqda
 
@@ -8,7 +10,7 @@
 
 ## 🧠 Loyiha haqida
 
-`ZON` — bu ko‘p valyuta juftliklarda ishlay oladigan, risk va money menejmentni o‘z ichiga olgan va foydalanuvchi sozlashlariga moslashadigan kuchli algoritmik robot.
+`Momentum_pullback` — bu ko‘p valyuta juftliklarda ishlay oladigan, risk va money menejmentni o‘z ichiga olgan va foydalanuvchi sozlashlariga moslashadigan kuchli algoritmik robot.
 
 Loyiha quyidagi bloklarga ajratilgan:
 
@@ -56,7 +58,7 @@ Loyiha quyidagi bloklarga ajratilgan:
 ---
 
 ## 📬 Bog‘lanish
-- **ZON robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
+- **Momentum_pullback robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
 - Agar siz alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
 - 📈 **Telegram:** [@Nematillo_Ochilov](https://t.me/Nematillo_Ochilov)
 - 🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
