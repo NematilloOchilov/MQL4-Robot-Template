@@ -50,7 +50,7 @@ Loyiha quyidagi bloklarga ajratilgan:
 
 Agar siz `MyExpert` robotining to‘liq funksional `.ex4` versiyasiga ega bo‘lishni istasangiz yoki alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
 
-📈 **Telegram:** [@yourtelegram](https://t.me/Nematillo_Ochilov) *(o‘rnini to‘ldiring)*  
+📈 **Telegram:** [@Nematillo_Ochilov](https://t.me/Nematillo_Ochilov) *(o‘rnini to‘ldiring)*  
 🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
 
 ---
