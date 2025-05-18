@@ -1,46 +1,29 @@
 #ifndef __TRADE_MQH__
 #define __TRADE_MQH__
 
-#include <NemoQuantX/Risk.mqh>
-#include <NemoQuantX/Strategy.mqh>
-#include <NemoQuantX/Logger.mqh>
+#include "Logger.mqh"
+#include "Risk.mqh"
+#include "Strategy.mqh"
+#include "ErrorHelper.mqh"
 
-class TradeManager {
-private:
-    RiskManager     *riskManager;
-    StrategyManager *strategyManager;
-    Logger          logger;
+void ExecuteTrade() {
+   if (!EntrySignal()) return;
 
-public:
-    void SetRiskManager(RiskManager &rm) {
-        riskManager = &rm;
-    }
+   double stopLossPips = 30; // yoki strategiyaga qarab hisoblanadi
+   double lot = CalculateLot(stopLossPips);
 
-    void SetStrategy(StrategyManager &sm) {
-        strategyManager = &sm;
-    }
+   double sl = Bid - stopLossPips * Point;
+   double tp1 = Bid + 50 * Point;
+   double tp2 = Bid + 76 * Point;
 
-    void ExecuteTrade(string symbol, int timeframe) {
-        double lot = riskManager.LotSize(symbol);
-        double sl = strategyManager->GetSL(symbol, timeframe);
-        double tp = strategyManager->GetTP(symbol, timeframe);
-        int direction = strategyManager->GetSignal(symbol, timeframe);
+   int ticket1 = OrderSend(Symbol(), OP_BUY, lot, Ask, 3, sl, tp1, "TP1", 0, 0, clrBlue);
+   int ticket2 = OrderSend(Symbol(), OP_BUY, lot, Ask, 3, sl, tp2, "TP2", 0, 0, clrGreen);
 
-        if (direction == 1) {
-            int ticket = OrderSend(symbol, OP_BUY, lot, Ask, 3, sl, tp, "Buy by NemoQuantX", 0, 0, clrGreen);
-            if (ticket > 0)
-                logger.Log("Buy order opened: " + IntegerToString(ticket));
-            else
-                logger.Log("Buy order failed: " + ErrorDescription(GetLastError()));
-        }
-        else if (direction == -1) {
-            int ticket = OrderSend(symbol, OP_SELL, lot, Bid, 3, sl, tp, "Sell by NemoQuantX", 0, 0, clrRed);
-            if (ticket > 0)
-                logger.Log("Sell order opened: " + IntegerToString(ticket));
-            else
-                logger.Log("Sell order failed: " + ErrorDescription(GetLastError()));
-        }
-    }
-};
+   if (ticket1 < 0 || ticket2 < 0) {
+      Log("Buy order error: " + ErrorDescription(GetLastError()));
+   } else {
+      Log("Buy orders sent: " + IntegerToString(ticket1) + ", " + IntegerToString(ticket2));
+   }
+}
 
 #endif
