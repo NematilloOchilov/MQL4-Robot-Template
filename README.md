@@ -1,4 +1,4 @@
-# Momentum_pullback — MQL4 Algorithmic Trading Robot
+# NemoQuantX — MQL4 Algorithmic Trading Robot
 
 **Muallif:** Ne'matillo Ochilov
 Strategist, MQL4 developer va algoritmik savdo bo‘yicha mustaqil tadqiqotchi.
@@ -10,7 +10,7 @@ Strategist, MQL4 developer va algoritmik savdo bo‘yicha mustaqil tadqiqotchi.
 
 ## 🧠 Loyiha haqida
 
-`Momentum_pullback` — bu ko‘p valyuta juftliklarda ishlay oladigan, risk va money menejmentni o‘z ichiga olgan va foydalanuvchi sozlashlariga moslashadigan kuchli algoritmik robot.
+`NemoQuantX` — bu ko‘p valyuta juftliklarda ishlay oladigan, risk va money menejmentni o‘z ichiga olgan va foydalanuvchi sozlashlariga moslashadigan kuchli algoritmik robot.
 
 Loyiha quyidagi bloklarga ajratilgan:
 
@@ -58,7 +58,7 @@ Loyiha quyidagi bloklarga ajratilgan:
 ---
 
 ## 📬 Bog‘lanish
-- **Momentum_pullback robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
+- **NemoQuantX robotining to‘liq funksional `.ex4` versiyasi sotilmaydi!**
 - Agar siz alohida strategiya/robot buyurtma bermoqchi bo‘lsangiz:
 - 📈 **Telegram:** [@Nematillo_Ochilov](https://t.me/Nematillo_Ochilov)
 - 🌐 **GitHub:** [github.com/NematilloOchilov](https://github.com/NematilloOchilov)
