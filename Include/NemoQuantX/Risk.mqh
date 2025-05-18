@@ -1,32 +1,20 @@
-//+------------------------------------------------------------------+
-//| Risk.mqh                                                        |
-//+------------------------------------------------------------------+
 #ifndef __RISK_MQH__
 #define __RISK_MQH__
 
-class RiskManager {
-private:
-   double riskPercent;
-public:
-   RiskManager(double percent = 1.0) {
-      riskPercent = percent;
-   }
+extern double RiskPercent = 1.0; // 1% risk har bir bitimga
 
-   double CalculateLot(double stopLossPips) {
-      double balance = AccountBalance();
-      double riskAmount = balance * riskPercent / 100.0;
-      double pipValue = 10.0;
-      double lot = riskAmount / (stopLossPips * pipValue);
+// Hisob-kitob: qancha lot ochish kerak
+// SL punktlarda
+// return: lot hajmi
 
-      double minLot = MarketInfo(Symbol(), MODE_MINLOT);
-      double maxLot = MarketInfo(Symbol(), MODE_MAXLOT);
-      double lotStep = MarketInfo(Symbol(), MODE_LOTSTEP);
-
-      lot = MathMax(minLot, MathMin(maxLot, lot));
-      lot = NormalizeDouble(lot / lotStep, 0) * lotStep;
-
-      return NormalizeDouble(lot, 2);
-   }
-};
+double CalculateLot(double stopLossPips) {
+   double riskMoney = AccountBalance() * RiskPercent / 100.0;
+   double lotSize = (riskMoney / (stopLossPips * MarketInfo(Symbol(), MODE_TICKVALUE)));
+   double minLot = MarketInfo(Symbol(), MODE_MINLOT);
+   double lotStep = MarketInfo(Symbol(), MODE_LOTSTEP);
+   double normalizedLot = MathFloor(lotSize / lotStep) * lotStep;
+   if (normalizedLot < minLot) normalizedLot = minLot;
+   return normalizedLot;
+}
 
 #endif
