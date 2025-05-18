@@ -1,15 +1,21 @@
+#include <NemoQuantX/Logger.mqh>
+#include <NemoQuantX/Risk.mqh>
+#include <NemoQuantX/Strategy.mqh>
 #include <NemoQuantX/Trade.mqh>
 
-RiskManager     riskManager;
-StrategyManager strategyManager;
-TradeManager    tradeManager;
-
 int OnInit() {
-    tradeManager.SetRiskManager(riskManager);
-    tradeManager.SetStrategy(strategyManager);
-    return INIT_SUCCEEDED;
+   Log("NemoQuantX robot ishga tushdi");
+   return(INIT_SUCCEEDED);
 }
 
 void OnTick() {
-    tradeManager.ExecuteTrade(Symbol(), PERIOD_H1);
+   static datetime lastTradeTime = 0;
+   if (TimeCurrent() - lastTradeTime > 3600 * 4) { // har 4 soatda faqat bitta tekshiruv
+      ExecuteTrade();
+      lastTradeTime = TimeCurrent();
+   }
+}
+
+void OnDeinit(const int reason) {
+   Log("NemoQuantX robot to‘xtatildi");
 }
