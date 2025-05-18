@@ -1,10 +1,9 @@
 # NemoQuantX — MQL4 Algorithmic Trading Robot
 
-**Muallif:** Ne'matillo Ochilov
-Strategist, MQL4 developer va algoritmik savdo bo‘yicha mustaqil tadqiqotchi.
-**Dasturchi:** Ne'matillo Ochilov
-**Loyiha turi:** Shaxsiy (barcha huquqlar himoyalangan)
-**Status:** Faol ishlab chiqilmoqda
+- **Muallif:** Ne'matillo Ochilov Strategist, MQL4 developer va algoritmik savdo bo‘yicha mustaqil tadqiqotchi.
+- **Dasturchi:** Ne'matillo Ochilov
+- **Loyiha turi:** Shaxsiy (barcha huquqlar himoyalangan)
+- **Status:** Faol ishlab chiqilmoqda
 
 ---
 
