@@ -1,30 +1,18 @@
-//+------------------------------------------------------------------+
-//| Strategy.mqh                                                    |
-//+------------------------------------------------------------------+
 #ifndef __STRATEGY_MQH__
 #define __STRATEGY_MQH__
 
-#include <NemoQuantX/Trade.mqh>
+bool EntrySignal() {
+   double high = iHigh(Symbol(), PERIOD_W1, 1);
+   double close = iClose(Symbol(), PERIOD_D1, 0);
+   double low = iLow(Symbol(), PERIOD_D1, 0);
+   double fib236 = high - (high - low) * 0.236;
 
-class Strategy {
-private:
-   TradeManager tradeManager;
-public:
-   Strategy(TradeManager &tm) : tradeManager(tm) {}
+   double rsi = iRSI(Symbol(), PERIOD_D1, 14, PRICE_CLOSE, 0);
 
-   void Execute() {
-      double rsi = iRSI(Symbol(), 0, 14, PRICE_CLOSE, 0);
-      double high = iHigh(Symbol(), PERIOD_D1, 1);
-      double low = iLow(Symbol(), PERIOD_D1, 1);
-      double fib23 = high - (high - low) * 0.236;
-      double fib50 = high - (high - low) * 0.5;
-      double fib76 = high - (high - low) * 0.764;
-      double currentPrice = Ask;
-
-      if (currentPrice <= fib23 && rsi <= 30) {
-         tradeManager.OpenBuy(currentPrice, fib50, fib76);
-      }
+   if (close > high && Close[0] <= fib236 && rsi <= 30) {
+      return true;
    }
-};
+   return false;
+}
 
 #endif
