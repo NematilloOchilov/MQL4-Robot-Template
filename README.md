@@ -16,7 +16,7 @@ Loyiha quyidagi bloklarga ajratilgan:
 - 🔹 **Money Management** – Lot hajmini balans va risk asosida avtomatik hisoblaydi
 - 🔹 **Risk Management** – Har bir bitimda foizli riskni belgilaydi (masalan, 1%)
 - 🔹 **Strategy** – Narx haftalik maksimumni yorib o‘tib, 23.6% Fib retest qilganda RSI asosida bitim ochiladi
-- 🔹 **Risk Management** – Xatoliklar va muhim voqealarni yozib boradi
+- 🔹 **Logger** – Xatoliklar va muhim voqealarni yozib boradi
 - 🔹 **ErrorHelper** – Xatoliklar mazmuni majmui
 
 ---
