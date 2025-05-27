@@ -1,21 +1,58 @@
+//+------------------------------------------------------------------+
+//|                                                  NemoQuantX.mq4  |
+//|                                      Strategiya muallifi: Jamoa  |
+//|                                    Dasturchi: Nematillo Ochilov  |
+//+------------------------------------------------------------------+
+#property copyright "NemoQuantX MT4 savdoni avtomatlashtiruvchi roboti"
+#property link      "https://t.me/MQLUZ"
+#property strict
+
+//--- Testerda o'zgartirish mumkin bo'lgan parametrlar
+//input group "=== Risk Management ==="
+//input double RiskPerTrade    = 0.5;    // Har bir savdoda risk (%)
+input int    StopLoss        = 200;    // Stop-loss (punkt)
+input int    TakeProfit      = 400;    // Take-profit (punkt)
+
+//input group "=== Strategy Settings ==="
+input int    MAPeriod        = 14;  // Moving Average period
+input bool   UseRSIFilter = true;  // RSI filtri ishlatilsinmi??
+input double RSIThreshold    = 30.0;  // RSI chegarasi
+
+#include <NemoQuantX/Defines.mqh>
+#include <NemoQuantX/Config.mqh>
+#include <NemoQuantX/Functions.mqh>
+#include <NemoQuantX/Trading.mqh>
 #include <NemoQuantX/Logger.mqh>
-#include <NemoQuantX/Risk.mqh>
-#include <NemoQuantX/Strategy.mqh>
-#include <NemoQuantX/Trade.mqh>
+#include <NemoQuantX/ErrorHelper.mqh>  // Log("Buy order error: " + ErrorDescription(GetLastError()));
 
-int OnInit() {
-   Log("NemoQuantX robot ishga tushdi");
-   return(INIT_SUCCEEDED);
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Dastur boshlang'ich sozlamalari
+    if(!LoadConfiguration()) return(INIT_FAILED);
+    if(!InitializeIndicators()) return(INIT_FAILED);
+    
+    return(INIT_SUCCEEDED);
 }
 
-void OnTick() {
-   static datetime lastTradeTime = 0;
-   if (TimeCurrent() - lastTradeTime > 3600 * 4) { // har 4 soatda faqat bitta tekshiruv
-      ExecuteTrade();
-      lastTradeTime = TimeCurrent();
-   }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    CleanUpChartObjects();
 }
 
-void OnDeinit(const int reason) {
-   Log("NemoQuantX robot to‘xtatildi");
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    if(!IsTradingAllowed()) return;
+    
+    ManageOpenPositions();
+    CheckForNewSignals();
+    UpdateDashboard();
 }
